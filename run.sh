@@ -1,0 +1,1 @@
+docker run -d -p 8080:8080 --gpus all --name vllm-api vllm-server

@@ -1,0 +1,11 @@
+python3 -m vllm.entrypoints.openai.api_server \
+    --port 8080 \
+    --model "meta-llama/Llama-3.2-3B" \
+    --dtype half \
+    --max_model_len 6000 \
+    --kv-cache-dtype fp8 \
+    --tensor-parallel-size 1 \
+    --cpu-offload-gb 2.0 \
+    --gpu-memory-utilization 0.95 \
+    --device cuda \
+    --chat-template ./vllm/examples/template_chatml.jinja
